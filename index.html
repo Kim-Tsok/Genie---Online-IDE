@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<title>Genie - The Online IDE</title>
+	</head>
+	<body class="text-white">
+		<div class="bg-zinc-800 h-10 border-b border-zinc-500">
+			<div class="flex w-full h-full" id="Open Tab">
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openHTML()"
+					id="Open Html"
+				>
+					<h3 class="text-center">HTML</h3>
+				</div>
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openCss()"
+					id="Open Css"
+				>
+					<h3>CSS</h3>
+				</div>
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openJS()"
+					id="Open Js"
+				>
+					<h3>JavaScript</h3>
+				</div>
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openOutput()"
+					id="Open Output"
+				>
+					<h3>Output</h3>
+				</div>
+			</div>
+		</div>
+		<div class="bg-zinc-900 h-[calc(100vh-40px)] p-2" id="html-tab">
+			<textarea
+				name="html-code"
+				id="html-code"
+				placeholder="Input HTML Here..."
+				onkeyup="Run()"
+				class="w-full h-full bg-zinc-900 border border-zinc-800 resize-none p-2"
+			></textarea>
+		</div>
+		<div class="bg-zinc-900 h-[calc(100vh-40px)] p-2 hidden" id="css-tab">
+			<textarea
+				name="css-code"
+				id="css-code"
+				onkeyup="Run()"
+				placeholder="Input CSS Here..."
+				class="w-full h-full bg-zinc-900 border border-zinc-800 resize-none p-2"
+			></textarea>
+		</div>
+		<div class="bg-zinc-900 h-[calc(100vh-40px)] p-2 hidden" id="js-tab">
+			<textarea
+				name="js-code"
+				id="js-code"
+				onkeyup="Run()"
+				placeholder="Input JavaScript Here..."
+				class="w-full h-full bg-zinc-900 border border-zinc-800 resize-none p-2"
+			></textarea>
+		</div>
+		<iframe
+			id="output-tab"
+			srcdoc=""
+			class="text-black h-[calc(100vh-40px)] w-screen hidden"
+		></iframe>
+
+		<script>
+			let Html = document.getElementById("html-tab");
+			let openTab = document.getElementById("Open Tab");
+			let Css = document.getElementById("css-tab");
+			let Js = document.getElementById("js-tab");
+			var Output = document.getElementById("output-tab");
+			var htmlCode = document.getElementById("html-code").value;
+			var jsCode = document.getElementById("js-code").value;
+			var cssCode = document.getElementById("css-code").value;
+
+			const openHTML = () => {
+				Html.style.display = "block";
+				openTab.innerHTML = `
+				<div
+				class="w-24 border-t-0 border-x border-zinc-500 bg-zinc-800 flex items-center justify-center cursor-pointer"
+					onclick="openHTML()"
+				>
+					<h3 class="text-center">HTML</h3>
+				</div>
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openCss()"
+					id="Open Css"
+				>
+					<h3>CSS</h3>
+				</div>
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openJS()"
+					id="Open Js"
+				>
+					<h3>JavaScript</h3>
+				</div>
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openOutput()"
+					id="Open Output"
+				>
+					<h3>Output</h3>
+				</div>`;
+				Css.style.display = "none";
+				Js.style.display = "none";
+				Output.style.display = "none";
+			};
+			const openCss = () => {
+				Html.style.display = "none";
+				Css.style.display = "block";
+				openTab.innerHTML = `
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openHTML()"
+					id="Open Html"
+				>
+					<h3 class="text-center">HTML</h3>
+				</div>
+				<div
+				class="w-24 border-t-0 border-x border-zinc-500 bg-zinc-800 flex items-center justify-center cursor-pointer"
+					onclick="openCSS()"
+				>
+					<h3 class="text-center">CSS</h3>
+				</div>
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openJS()"
+					id="Open Js"
+				>
+					<h3>JavaScript</h3>
+				</div>
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openOutput()"
+					id="Open Output"
+				>
+					<h3>Output</h3>
+				</div>`;
+				Js.style.display = "none";
+				Output.style.display = "none";
+			};
+			const openJS = () => {
+				Html.style.display = "none";
+				Css.style.display = "none";
+				Js.style.display = "block";
+				openTab.innerHTML = `
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openHTML()"
+					id="Open Html"
+				>
+					<h3 class="text-center">HTML</h3>
+				</div>
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openCss()"
+					id="Open Css"
+				>
+					<h3>CSS</h3>
+				</div>
+				<div
+				class="w-24 border-t-0 border-x border-zinc-500 bg-zinc-800 flex items-center justify-center cursor-pointer"
+					onclick="openJS()"
+				>
+					<h3 class="text-center">JavaScript</h3>
+				</div>
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openOutput()"
+					id="Open Output"
+				>
+					<h3>Output</h3>
+				</div>`;
+				Output.style.display = "none";
+			};
+			const openOutput = () => {
+				Html.style.display = "none";
+				Css.style.display = "none";
+				Js.style.display = "none";
+				Output.style.display = "block";
+				openTab.innerHTML = `
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openHTML()"
+					id="Open Html"
+				>
+					<h3 class="text-center">HTML</h3>
+				</div>
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openCss()"
+					id="Open Css"
+				>
+					<h3>CSS</h3>
+				</div>
+				<div
+					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					onclick="openJS()"
+					id="Open Js"
+				>
+					<h3>JavaScript</h3>
+				</div>
+				<div
+				class="w-24 border-t-0 border-x border-zinc-500 bg-zinc-800 flex items-center justify-center cursor-pointer"
+					onclick="openOutput()"
+				>
+					<h3 class="text-center">Output</h3>
+				</div>
+				
+				`;
+			};
+			const Run = () => {
+				Output.srcdoc = `${document.getElementById("html-code").value}
+					<style>
+					${document.getElementById("css-code").value}
+					</style>`;
+				eval(document.getElementById("js-code").value);
+			};
+		</script>
+	</body>
+</html>
