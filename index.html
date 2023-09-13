@@ -11,32 +11,40 @@
 		<div class="bg-zinc-800 h-10 border-b border-zinc-500">
 			<div class="flex w-full h-full" id="Open Tab">
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openHTML()"
 					id="Open Html"
 				>
-					<h3 class="text-center">HTML</h3>
+					<img src="/html5.svg" alt="Html Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">HTML</h3>
 				</div>
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openCss()"
 					id="Open Css"
 				>
-					<h3>CSS</h3>
+					<img src="/css3-alt.svg" alt="CSS Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">CSS</h3>
 				</div>
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openJS()"
 					id="Open Js"
 				>
-					<h3>JavaScript</h3>
+					<img src="/js.svg" alt="JS Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">JavaScript</h3>
 				</div>
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openOutput()"
 					id="Open Output"
 				>
-					<h3>Output</h3>
+					<img
+						src="/window-maximize.svg"
+						alt="Output Logo"
+						class="w-5 h-5 mr-1"
+					/>
+					<h3 class="text-center text-sm">Output</h3>
 				</div>
 			</div>
 		</div>
@@ -62,7 +70,6 @@
 			<textarea
 				name="js-code"
 				id="js-code"
-				onkeyup="Run()"
 				placeholder="Input JavaScript Here..."
 				class="w-full h-full bg-zinc-900 border border-zinc-800 resize-none p-2"
 			></textarea>
@@ -87,31 +94,39 @@
 				Html.style.display = "block";
 				openTab.innerHTML = `
 				<div
-				class="w-24 border-t-0 border-x border-zinc-500 bg-zinc-800 flex items-center justify-center cursor-pointer"
+				class="w-32 border-t-0 border-x border-zinc-500 bg-zinc-800 flex items-center justify-center cursor-pointer"
 					onclick="openHTML()"
 				>
-					<h3 class="text-center">HTML</h3>
+				<img src="/html5.svg" alt="Html Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">HTML</h3>
 				</div>
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openCss()"
 					id="Open Css"
 				>
-					<h3>CSS</h3>
+				<img src="/css3-alt.svg" alt="CSS Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">CSS</h3>
 				</div>
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openJS()"
 					id="Open Js"
 				>
-					<h3>JavaScript</h3>
+				<img src="/js.svg" alt="JS Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">JavaScript</h3>
 				</div>
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openOutput()"
 					id="Open Output"
 				>
-					<h3>Output</h3>
+				<img
+						src="/window-maximize.svg"
+						alt="Output Logo"
+						class="w-5 h-5 mr-1"
+					/>
+					<h3 class="text-center text-sm">Output</h3>
 				</div>`;
 				Css.style.display = "none";
 				Js.style.display = "none";
@@ -122,31 +137,39 @@
 				Css.style.display = "block";
 				openTab.innerHTML = `
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openHTML()"
 					id="Open Html"
 				>
-					<h3 class="text-center">HTML</h3>
+				<img src="/html5.svg" alt="Html Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">HTML</h3>
 				</div>
 				<div
-				class="w-24 border-t-0 border-x border-zinc-500 bg-zinc-800 flex items-center justify-center cursor-pointer"
+				class="w-32 border-t-0 border-x border-zinc-500 bg-zinc-800 flex items-center justify-center cursor-pointer"
 					onclick="openCSS()"
 				>
-					<h3 class="text-center">CSS</h3>
+				<img src="/css3-alt.svg" alt="CSS Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">CSS</h3>
 				</div>
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openJS()"
 					id="Open Js"
 				>
-					<h3>JavaScript</h3>
+				<img src="/js.svg" alt="JS Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">JavaScript</h3>
 				</div>
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openOutput()"
 					id="Open Output"
 				>
-					<h3>Output</h3>
+				<img
+						src="/window-maximize.svg"
+						alt="Output Logo"
+						class="w-5 h-5 mr-1"
+					/>
+					<h3 class="text-center text-sm">Output</h3>
 				</div>`;
 				Js.style.display = "none";
 				Output.style.display = "none";
@@ -157,32 +180,50 @@
 				Js.style.display = "block";
 				openTab.innerHTML = `
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openHTML()"
 					id="Open Html"
 				>
-					<h3 class="text-center">HTML</h3>
+				<img src="/html5.svg" alt="Html Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">HTML</h3>
 				</div>
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openCss()"
 					id="Open Css"
 				>
-					<h3>CSS</h3>
+				<img src="/css3-alt.svg" alt="CSS Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">CSS</h3>
 				</div>
 				<div
-				class="w-24 border-t-0 border-x border-zinc-500 bg-zinc-800 flex items-center justify-center cursor-pointer"
+				class="w-32 border-t-0 border-x border-zinc-500 bg-zinc-800 flex items-center justify-center cursor-pointer"
 					onclick="openJS()"
 				>
-					<h3 class="text-center">JavaScript</h3>
+				<img src="/js.svg" alt="JS Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">JavaScript</h3>
 				</div>
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openOutput()"
 					id="Open Output"
 				>
-					<h3>Output</h3>
-				</div>`;
+				<img
+						src="/window-maximize.svg"
+						alt="Output Logo"
+						class="w-5 h-5 mr-1"
+					/>
+					<h3 class="text-center text-sm">Output</h3>
+				</div>
+				<div
+				class="bg-green-800 text-white float-right hover:bg-green-900 px-3 py-2 text-sm flex items-center justify-center cursor-pointer" onclick="RunJS()"
+			>
+			<img
+						src="/play.svg"
+						alt="Run & Save Logo"
+						class="w-4 h-4 mr-1"
+					/>
+			   Save & Run
+			</div>`;
 				Output.style.display = "none";
 			};
 			const openOutput = () => {
@@ -192,31 +233,39 @@
 				Output.style.display = "block";
 				openTab.innerHTML = `
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openHTML()"
 					id="Open Html"
 				>
-					<h3 class="text-center">HTML</h3>
+				<img src="/html5.svg" alt="Html Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">HTML</h3>
 				</div>
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openCss()"
 					id="Open Css"
 				>
-					<h3>CSS</h3>
+				<img src="/css3-alt.svg" alt="CSS Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">CSS</h3>
 				</div>
 				<div
-					class="w-24 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
+					class="w-32 bg-zinc-900 flex items-center justify-center cursor-pointer border-r border-black tabs"
 					onclick="openJS()"
 					id="Open Js"
 				>
-					<h3>JavaScript</h3>
+				<img src="/js.svg" alt="JS Logo" class="w-5 h-5 mr-1" />
+					<h3 class="text-center text-sm">JavaScript</h3>
 				</div>
 				<div
-				class="w-24 border-t-0 border-x border-zinc-500 bg-zinc-800 flex items-center justify-center cursor-pointer"
+				class="w-32 border-t-0 border-x border-zinc-500 bg-zinc-800 flex items-center justify-center cursor-pointer"
 					onclick="openOutput()"
 				>
-					<h3 class="text-center">Output</h3>
+				<img
+						src="/window-maximize.svg"
+						alt="Output Logo"
+						class="w-5 h-5 mr-1"
+					/>
+					<h3 class="text-center text-sm">Output</h3>
 				</div>
 				
 				`;
@@ -226,7 +275,12 @@
 					<style>
 					${document.getElementById("css-code").value}
 					</style>`;
-				eval(document.getElementById("js-code").value);
+			};
+			const RunJS = () => {
+				Output.srcdoc = `${document.getElementById("html-code").value}
+					<style>
+					${document.getElementById("css-code").value}
+					</style> <script> ${document.getElementById("js-code").value} <\/script>`;
 			};
 		</script>
 	</body>
